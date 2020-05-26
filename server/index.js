@@ -12,6 +12,10 @@ const io = socketIo(server);
 io.on('connection', (socket) =>{
     console.log('Connection')
 
+    socket.on('join', ({name, room}, callback)=>{
+        console.log(name, room)
+    });
+
     socket.on('disconnect', () =>{
         console.log("fffffffffffffff")
     })
